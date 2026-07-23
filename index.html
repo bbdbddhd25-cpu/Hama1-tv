@@ -99,9 +99,9 @@
             background: #0b0f19;
         }
         .channels-title {
-            padding: 12px 15px;
-            font-size: 12px;
-            color: #9ca3af;
+            padding: 10px 15px 5px 15px;
+            font-size: 11px;
+            color: #8b5cf6;
             font-weight: bold;
             letter-spacing: 0.5px;
         }
@@ -176,47 +176,47 @@
     </div>
 
     <div class="channels-section">
-        <div class="channels-title">ALL CHANNELS</div>
         <div class="channels-list">
             
+            <!-- بەشی یەکەم: کەناڵە ناوخۆییەکان -->
+            <div class="channels-title">کەناڵە ناوخۆییەکان</div>
             <div class="channel-item active" data-name="AVA HD">
                 <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
             </div>
-
             <div class="channel-item" data-name="Rudaw HD">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
             </div>
-
             <div class="channel-item" data-name="Channel 8">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
             </div>
-
             <div class="channel-item" data-name="Kurdistan TV">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Kurdistan TV">
                 <span class="channel-name">Kurdistan TV</span>
             </div>
-
             <div class="channel-item" data-name="Kurdsat HD">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="Kurdsat">
                 <span class="channel-name">Kurdsat HD</span>
             </div>
 
+            <!-- بەشی دووەم: وەرزشی -->
+            <div class="channels-title">وەرزشی</div>
+            <div class="channel-item" data-name="NRT Sports">
+                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="NRT Sports">
+                <span class="channel-name">NRT Sports</span>
+            </div>
+
+            <!-- بەشی سێیەم: فلیم -->
+            <div class="channels-title">فلیم</div>
             <div class="channel-item" data-name="KurdMax Sorani HD">
                 <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=100" class="channel-logo" alt="KurdMax">
                 <span class="channel-name">KurdMax Sorani HD</span>
             </div>
-
             <div class="channel-item" data-name="NRT HD">
                 <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="NRT">
                 <span class="channel-name">NRT HD</span>
-            </div>
-
-            <div class="channel-item" data-name="NRT Sports">
-                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="NRT Sports">
-                <span class="channel-name">NRT Sports</span>
             </div>
 
         </div>
@@ -235,7 +235,6 @@
 
                 let name = this.getAttribute('data-name');
 
-                // لێرەدا هیچ لینکی بوونی نییە، بۆیە تەنها پەیامی هەڵە دەردەبڕێت و تەواو
                 playerContent.innerHTML = `
                     <div class="video-placeholder-icon">⚠️</div>
                     <div class="video-message">Stream error. ${name} has no link.</div>
@@ -247,4 +246,3 @@
 
 </body>
 </html>
-
