@@ -3,75 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ئامانج تیڤی - پەخشی ڕاستەخۆ</title>
+    <title>LiveFootballPro - پەخشی ڕاستەوخۆ</title>
     <style>
-        body {
-            background-color: #0f1016;
-            color: #ffffff;
-            font-family: Tahoma, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: Tahoma, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
         }
         header {
             text-align: center;
-            padding: 20px;
-            background-color: #1a1c29;
-            border-bottom: 1px solid #2a2e43;
-        }
-        .menu {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+            margin-bottom: 30px;
             padding: 15px;
-            background-color: #151722;
-        }
-        .menu button {
-            background-color: #2b245c;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-        /* بۆ بەشی دانانی پەخشی کەناڵ یان ڤیدیۆ */
-        .player-box {
-            width: 100%;
-            max-width: 800px;
-            height: 450px;
-            background-color: #1a1c29;
-            margin: 20px auto;
+            background: #1f1f1f;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        header h1 {
+            color: #00ff88;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        header p {
+            color: #b3b3b3;
+            font-size: 14px;
+        }
+        .section-title {
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+            color: #00ff88;
+            border-right: 4px solid #00ff88;
+            padding-right: 8px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card:hover {
+            background-color: #2c2c2c;
+            border-color: #00ff88;
+            transform: translateY(-3px);
+        }
+        .card h3 {
+            font-size: 15px;
+            color: #fff;
+        }
+        .player-box {
+            background-color: #1a1a1a;
+            border: 2px dashed #333;
+            border-radius: 10px;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #2a2e43;
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h2>ئامانج تیڤی</h2>
+        <h1>مەکۆی پەخشی ڕاستەوخۆ</h1>
+        <p>سەیری یارییەکان و کەناڵەکان بە لایڤ بکە</p>
     </header>
 
-    <div class="menu">
-        <button>گشت</button>
-        <button>فیلمەکان</button>
-        <button>هەواڵەکان</button>
-        <button>وەرزش</button>
-    </div>
-
-    <div class="container">
-        <p>کەناڵەکان یان پەخشی ڕاستەخۆ لێرە دەردەکەون</p>
-        <div class="player-box">
-            <!-- لێرەدا دەتوانیت کۆدی ئێمبەدی کەناڵ یان پلەیەر دابنێیت -->
-            <span>لینک یان ڤیدیۆی کەناڵ لێرە دادەنرێت</span>
+    <!-- بەشی پلەیعەری لایڤ -->
+    <div class="section-title">پەخشی سەرەکی</div>
+    <div class="player-box">
+        <div>
+            <p>لێرەدا پەخشی ڕاستەوخۆ دەردەکەوێت</p>
+            <span style="font-size: 12px; color: #00ff88;">کەناڵێک هەڵبژێرە لە خوارەوە 👇</span>
         </div>
     </div>
+
+    <!-- بەشی یارییەکان -->
+    <div class="section-title">یارییە ڕاستەوخۆکانی ئەمڕۆ</div>
+    <div class="grid-container">
+        <div class="card" onclick="alert('یارییەکە هێشتا دەستی پێنەکردووە')">
+            <h3>⚽ ڕیاڵ مەدرید × بارسێلۆنا</h3>
+            <p style="font-size: 12px; color: #00ff88; margin-top: 5px;">لایڤ ئێستا</p>
+        </div>
+        <div class="card" onclick="alert('یارییەکە هێشتا دەستی پێنەکردووە')">
+            <h3>⚽ مانچستەر سیتی × ئارسنال</h3>
+            <p style="font-size: 12px; color: #b3b3b3; margin-top: 5px;">کاتژمێر 10:00</p>
+        </div>
+    </div>
+
+    <!-- بەشی کەناڵەکان -->
+    <div class="section-title">کەناڵە ناوخۆیی و وەرزشییەکان</div>
+    <div class="grid-container">
+        <div class="card" onclick="alert('کەناڵی بەین سبۆرت')">
+            📺 Bein Sports 1
+        </div>
+        <div class="card" onclick="alert('کەناڵی ئێن ئاڕ تی')">
+            📺 NRT TV
+        </div>
+        <div class="card" onclick="alert('کەناڵی کوردسات')">
+            📺 Kurdsat
+        </div>
+        <div class="card" onclick="alert('کەناڵی ڕووداو')">
+            📺 Rudaw
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - هەموو مافێک پارێزراوە</p>
+    </footer>
 
 </body>
 </html>
