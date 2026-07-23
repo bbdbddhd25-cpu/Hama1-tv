@@ -209,8 +209,12 @@
         </div>
 
         <div class="video-box" id="video-box">
-            <!-- سەرەتای ڤیدیۆی لایگەر بە ڕاستەوخۆیی کارا کراوە -->
-            <iframe src="https://www.youtube.com/embed/ALD3hkFyr3k" title="فیلمی لایگەر" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- سەرەتای پلەیەر بە شێوازێکی خاڵی دەست پێدەکات تا کەناڵێک هەڵدەبژێریت -->
+            <div class="video-state-content" id="player-content">
+                <div class="video-placeholder-icon">📺</div>
+                <div class="video-message" style="color: #9ca3af;">کەناڵێک یان فیلمێک هەڵبژێرە</div>
+                <div class="video-subtext">Select a channel or movie to watch</div>
+            </div>
         </div>
     </div>
 
@@ -287,8 +291,8 @@
                 <span class="channel-name">نێن ئار تی سپۆرت</span>
             </div>
 
-            <!-- فیلمی لایگەر بە لینکەوە -->
-            <div class="channel-card selected" data-category="movies" data-name="فیلمی لایگەر (دۆبلاژکراوی کوردی)" data-type="youtube" data-link="ALD3hkFyr3k">
+            <!-- فیلمی لایگەر کە لینکەکەی تێدایە و کار دەكات -->
+            <div class="channel-card" data-category="movies" data-name="فیلمی لایگەر (دۆبلاژکراوی کوردی)" data-link="ALD3hkFyr3k">
                 <div class="channel-logo-wrap">
                     <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Liger Movie">
                 </div>
