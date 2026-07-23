@@ -19,7 +19,6 @@
             flex-direction: column;
             overflow: hidden;
         }
-        /* بەشی سەرەوە (پلەیری ڤیدیۆ) */
         .player-container {
             background: #111827;
             padding: 12px;
@@ -59,12 +58,9 @@
             cursor: pointer;
             color: #fff;
         }
-        .share-btn {
-            background: #8b5cf6;
-        }
-        .close-btn {
-            background: #ef4444;
-        }
+        .share-btn { background: #8b5cf6; }
+        .close-btn { background: #ef4444; }
+        
         .video-box {
             width: 100%;
             height: 210px;
@@ -115,7 +111,6 @@
             background: #38bdf8;
         }
 
-        /* بەشی خوارەوە (لیستی کەناڵەکان) */
         .channels-section {
             flex: 1;
             display: flex;
@@ -149,8 +144,12 @@
             color: #fff;
             transition: all 0.2s ease;
             border: 1px solid transparent;
+            cursor: pointer;
         }
-        .channel-item:hover, .channel-item.active {
+        .channel-item:hover {
+            background: #1f2937;
+        }
+        .channel-item.active {
             background: #8b5cf6;
             border-color: #a78bfa;
         }
@@ -165,8 +164,6 @@
             font-size: 13px;
             font-weight: 600;
         }
-
-        /* Scrollbar styling */
         .channels-list::-webkit-scrollbar {
             width: 4px;
         }
@@ -178,10 +175,10 @@
 </head>
 <body>
 
-    <!-- بەشی سەرەوەی پلەیەر -->
     <div class="player-container">
         <div class="player-top-bar">
-            <div class="error-badge">
+            <!-- پەیامی هەڵە ئەگەر لینکەکە کار نەكات یان بەتاڵ بێت -->
+            <div class="error-badge" id="error-box" style="display: none;">
                 ⚠️ Stream error. This channel...
             </div>
             <div class="player-actions">
@@ -194,7 +191,7 @@
             </div>
         </div>
 
-        <div class="video-box">
+        <div class="video-box" id="video-box">
             <div class="video-placeholder-icon">📺</div>
             <div class="video-controls">
                 <span>0:00</span>
@@ -210,63 +207,65 @@
         </div>
     </div>
 
-    <!-- بەشی خوارەوە - لیستی کەناڵەکان -->
     <div class="channels-section">
         <div class="channels-title">ALL CHANNELS</div>
         <div class="channels-list">
             
-            <a href="#" class="channel-item active">
+            <!-- هەر کەناڵێک کلیکی لێ بکەیت، لێرە دەگۆڕێت. ئەگەر لینکەکەی بەتاڵ بێت یان کار نەكات، پەیامی هەڵە دەردەکەوێت و ناچێتە هیچ شوێنێکی تر -->
+            <div class="channel-item active" data-link="">
                 <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
-            </a>
+            </div>
 
-            <a href="https://www.youtube.com/@RudawArabic/live" target="_blank" class="channel-item">
+            <div class="channel-item" data-link="https://www.youtube.com/@RudawArabic/live">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
-            </a>
+            </div>
 
-            <a href="#" class="channel-item">
+            <div class="channel-item" data-link="">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
-            </a>
+            </div>
 
-            <a href="#" class="channel-item">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=100" class="channel-logo" alt="Al-hadath">
-                <span class="channel-name">Al-hadath</span>
-            </a>
-
-            <a href="#" class="channel-item">
-                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=100" class="channel-logo" alt="Arabia">
-                <span class="channel-name">Arabia</span>
-            </a>
-
-            <a href="#" class="channel-item">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="Kurdistan TV">
-                <span class="channel-name">Kurdistan TV</span>
-            </a>
-
-            <a href="https://www.youtube.com/@KurdsatOfficial/live" target="_blank" class="channel-item">
+            <div class="channel-item" data-link="https://www.youtube.com/@KurdsatOfficial/live">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="Kurdsat">
                 <span class="channel-name">Kurdsat HD</span>
-            </a>
+            </div>
 
-            <a href="https://www.youtube.com/@KurdmaxTV/live" target="_blank" class="channel-item">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=100" class="channel-logo" alt="KurdMax">
-                <span class="channel-name">KurdMax Sorani HD</span>
-            </a>
-
-            <a href="https://www.youtube.com/@NRT1/live" target="_blank" class="channel-item">
+            <div class="channel-item" data-link="https://www.youtube.com/@NRT1/live">
                 <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="NRT">
                 <span class="channel-name">NRT HD</span>
-            </a>
-
-            <a href="https://www.youtube.com/@NRTSportOfficial/live" target="_blank" class="channel-item">
-                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="NRT Sports">
-                <span class="channel-name">NRT Sports</span>
-            </a>
+            </div>
 
         </div>
     </div>
+
+    <script>
+        const items = document.querySelectorAll('.channel-item');
+        const errorBox = document.getElementById('error-box');
+
+        // لە سەرەتادا بۆ AVA کە لینکی نییە، پەیامی هەڵە نیشان بدە
+        errorBox.style.display = 'flex';
+
+        items.forEach(item => {
+            item.addEventListener('click', function() {
+                // لابردنی چالاکی لە هەموویان و دانانی لەسەر ئەوەی کلیکی لەسەر کراوە
+                items.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                let link = this.getAttribute('data-link');
+
+                // ئەگەر لینکەکە بەتاڵ بوو یان نەبوو، پەیامی هەڵە پیشان بدە و مەچۆرە دەرەوە
+                if (!link || link.trim() === '' || link === '#') {
+                    errorBox.style.display = 'flex';
+                } else {
+                    // ئەگەر لینکی هەبوو، پەیامی هەڵە بشارەوە و دەتوانیت لایڤەکە بکەیتەوە
+                    errorBox.style.display = 'none';
+                    window.open(link, '_blank');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
