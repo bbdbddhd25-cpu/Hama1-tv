@@ -169,9 +169,8 @@
 
         <div class="video-box" id="video-box">
             <div class="video-state-content" id="player-content">
-                <!-- لێرەدا بە پێشوەختە پەیامی هەڵە بۆ AVA دەردەکەوێت چونکە لە سەرەتادا هەڵبژێردراوە و لینکی نییە -->
                 <div class="video-placeholder-icon">⚠️</div>
-                <div class="video-message">Stream error. This channel has no link.</div>
+                <div class="video-message">Stream error. AVA HD has no link.</div>
                 <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
             </div>
         </div>
@@ -181,28 +180,52 @@
         <div class="channels-title">ALL CHANNELS</div>
         <div class="channels-list">
             
-            <!-- AVA - لینکی نییە، کەواتە پەیامی هەڵە نیشان دەدات -->
+            <!-- AVA HD (بێ لینک - تەنها پەیامی هەڵە دەردەکەوێت و ناچێتە دەرەوە) -->
             <div class="channel-item active" data-link="" data-name="AVA HD">
-                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="AVA">
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
             </div>
 
-            <!-- Rudaw - لینکی هەیە و دەکرێتەوە -->
+            <!-- Rudaw HD (خاوەن لینک - لایڤەکەی دەکرێتەوە) -->
             <div class="channel-item" data-link="https://www.youtube.com/@RudawArabic/live" data-name="Rudaw HD">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
             </div>
 
-            <!-- Channel 8 - لینکی نییە -->
+            <!-- Channel 8 (بێ لینک) -->
             <div class="channel-item" data-link="" data-name="Channel 8">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
             </div>
 
-            <!-- Kurdsat - لینکی هەیە -->
+            <!-- Kurdistan TV (خاوەن لینک) -->
+            <div class="channel-item" data-link="https://www.youtube.com/@KurdsatOfficial/live" data-name="Kurdistan TV">
+                <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Kurdistan TV">
+                <span class="channel-name">Kurdistan TV</span>
+            </div>
+
+            <!-- Kurdsat HD (خاوەن لینک) -->
             <div class="channel-item" data-link="https://www.youtube.com/@KurdsatOfficial/live" data-name="Kurdsat HD">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="Kurdsat">
                 <span class="channel-name">Kurdsat HD</span>
+            </div>
+
+            <!-- KurdMax Sorani HD (خاوەن لینک) -->
+            <div class="channel-item" data-link="https://www.youtube.com/@KurdmaxTV/live" data-name="KurdMax Sorani HD">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=100" class="channel-logo" alt="KurdMax">
+                <span class="channel-name">KurdMax Sorani HD</span>
+            </div>
+
+            <!-- NRT HD (خاوەن لینک) -->
+            <div class="channel-item" data-link="https://www.youtube.com/@NRT1/live" data-name="NRT HD">
+                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="NRT">
+                <span class="channel-name">NRT HD</span>
+            </div>
+
+            <!-- NRT Sports (خاوەن لینک) -->
+            <div class="channel-item" data-link="https://www.youtube.com/@NRTSportOfficial/live" data-name="NRT Sports">
+                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="NRT Sports">
+                <span class="channel-name">NRT Sports</span>
             </div>
 
         </div>
@@ -220,7 +243,7 @@
                 let link = this.getAttribute('data-link');
                 let name = this.getAttribute('data-name');
 
-                // پشکنینی گشتی: ئەگەر لینک نەبوو یان بەتاڵ بوو
+                // لێرەدا پشکنین دەکەین: ئەگەر لینکەکە بەتاڵ بوو، تەنها پەیامی هەڵە لە پلەیەرەکەدا دەهێڵێتەوە و هیچ پەڕەیەک ناکاتەوە
                 if (!link || link.trim() === '' || link === '#') {
                     playerContent.innerHTML = `
                         <div class="video-placeholder-icon">⚠️</div>
@@ -228,7 +251,7 @@
                         <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
                     `;
                 } else {
-                    // ئەگەر لینکی هەبوو، پەیامی سەرکەوتن نیشان دەدات و لایڤەکە دەکرێتەوە
+                    // تەنها بۆ ئەو کەناڵانەی لینکی ڕاستەقینەیان هەیە، لایڤەکە دەکرێتەوە
                     playerContent.innerHTML = `
                         <div class="video-placeholder-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📺</div>
                         <div class="video-message" style="color: #38bdf8;">${name} - لایڤەکە دەستی پێکرد</div>
@@ -242,4 +265,3 @@
 
 </body>
 </html>
-
