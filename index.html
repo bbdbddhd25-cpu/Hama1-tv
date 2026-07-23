@@ -180,19 +180,19 @@
         <div class="channels-title">ALL CHANNELS</div>
         <div class="channels-list">
             
-            <!-- AVA HD (بێ لینک - تەنها پەیامی هەڵە دەردەکەوێت و ناچێتە دەرەوە) -->
+            <!-- AVA HD (بێ لینک) -->
             <div class="channel-item active" data-link="" data-name="AVA HD">
                 <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
             </div>
 
-            <!-- Rudaw HD (خاوەن لینک - لایڤەکەی دەکرێتەوە) -->
+            <!-- Rudaw HD (خاوەن لینک) -->
             <div class="channel-item" data-link="https://www.youtube.com/@RudawArabic/live" data-name="Rudaw HD">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
             </div>
 
-            <!-- Channel 8 (بێ لینک) -->
+            <!-- Channel 8 (بێ لینک - ئێستا ئەمیش بە هەمان شێوە پەیامی هەڵە دەردەكات ئەگەر لینکی نەبێت) -->
             <div class="channel-item" data-link="" data-name="Channel 8">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
@@ -243,7 +243,7 @@
                 let link = this.getAttribute('data-link');
                 let name = this.getAttribute('data-name');
 
-                // لێرەدا پشکنین دەکەین: ئەگەر لینکەکە بەتاڵ بوو، تەنها پەیامی هەڵە لە پلەیەرەکەدا دەهێڵێتەوە و هیچ پەڕەیەک ناکاتەوە
+                // پشکنینی گشتی بۆ هەموو کەناڵێک: ئەگەر لینکەکە بەتاڵ بوو یان بوونی نەبوو
                 if (!link || link.trim() === '' || link === '#') {
                     playerContent.innerHTML = `
                         <div class="video-placeholder-icon">⚠️</div>
@@ -251,7 +251,7 @@
                         <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
                     `;
                 } else {
-                    // تەنها بۆ ئەو کەناڵانەی لینکی ڕاستەقینەیان هەیە، لایڤەکە دەکرێتەوە
+                    // تەنها بۆ ئەو کەناڵانەی لینکی ڕاستەقینەیان هەیە لایڤەکە دەکرێتەوە
                     playerContent.innerHTML = `
                         <div class="video-placeholder-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📺</div>
                         <div class="video-message" style="color: #38bdf8;">${name} - لایڤەکە دەستی پێکرد</div>
