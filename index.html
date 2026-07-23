@@ -12,7 +12,7 @@
             font-family: Tahoma, sans-serif;
         }
         body {
-            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.92)), url('998.png') no-repeat center center fixed;
+            background: url('998.png') no-repeat center center fixed;
             background-size: cover;
             color: #ffffff;
             padding: 15px;
@@ -22,20 +22,20 @@
             text-align: center;
             margin-bottom: 20px;
             padding: 18px;
-            background: rgba(30, 41, 59, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid #334155;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         header h1 {
             color: #38bdf8;
             font-size: 24px;
             margin-bottom: 6px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         header p {
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 13px;
             line-height: 1.5;
         }
@@ -51,10 +51,10 @@
             display: none;
         }
         .filter-btn {
-            background-color: rgba(30, 41, 59, 0.9);
+            background-color: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(5px);
-            color: #94a3b8;
-            border: 1px solid #334155;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 10px 20px;
             border-radius: 25px;
             font-size: 13px;
@@ -69,13 +69,13 @@
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
         }
         .section-box {
-            background: rgba(30, 41, 59, 0.82);
-            backdrop-filter: blur(8px);
-            border: 1px solid #334155;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 15px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .section-title {
             font-size: 16px;
@@ -84,6 +84,7 @@
             border-right: 5px solid #38bdf8;
             padding-right: 10px;
             font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .grid-container {
             display: grid;
@@ -97,8 +98,9 @@
             }
         }
         .card {
-            background-color: rgba(15, 23, 42, 0.9);
-            border: 1px solid #334155;
+            background-color: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 10px;
             overflow: hidden;
             text-align: center;
@@ -107,17 +109,17 @@
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .card:hover {
             transform: translateY(-3px);
             border-color: #38bdf8;
-            box-shadow: 0 8px 15px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 8px 15px rgba(56, 189, 248, 0.3);
         }
         .card-img-box {
             width: 100%;
             height: 75px;
-            background: #1e293b;
+            background: rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -147,11 +149,12 @@
         }
         footer {
             text-align: center;
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 12px;
             margin-top: 30px;
-            border-top: 1px solid rgba(51, 65, 85, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -175,7 +178,6 @@
         <div class="section-title">📺 کەناڵە کوردییەکان و هەواڵ</div>
         <div class="grid-container">
             
-            <!-- ئەگەر لینکت داناوە، بیخە ناو خاڵی خوارەوە. ئەگەر لینکت لانەبردووە یان سفرە، تەنها `#` دابنێ -->
             <a href="https://www.youtube.com/@NRT1/live" target="_blank" class="card">
                 <div class="card-img-box">
                     <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" alt="NRT">
@@ -336,3 +338,4 @@
 
 </body>
 </html>
+
