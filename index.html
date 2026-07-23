@@ -291,12 +291,47 @@
                 <span class="channel-name">نێن ئار تی سپۆرت</span>
             </div>
 
-            <!-- فیلمی لایگەر کە لینکەکەی تێدایە و کار دەكات -->
-            <div class="channel-card" data-category="movies" data-name="فیلمی لایگەر (دۆبلاژکراوی کوردی)" data-link="ALD3hkFyr3k">
+            <!-- بەشی فلیمەکان -->
+            <div class="channel-card" data-category="movies" data-name="فیلمی لایگەر (کوردی)" data-link="ALD3hkFyr3k">
                 <div class="channel-logo-wrap">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Liger Movie">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Liger">
                 </div>
                 <span class="channel-name">فیلمی لایگەر (کوردی)</span>
+            </div>
+
+            <div class="channel-card" data-category="movies" data-name="فلیمی سێ گەمژەکە (کوردی)" data-link="3IDIOTS_ID_HERE">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=200" class="channel-logo" alt="3 Idiots">
+                </div>
+                <span class="channel-name">سێ گەمژەکە (کوردی)</span>
+            </div>
+
+            <div class="channel-card" data-category="movies" data-name="فلیمی بکوژی بەکرێ گیراو (کوردی)" data-link="ASSASSIN_ID_HERE">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=200" class="channel-logo" alt="Assassin">
+                </div>
+                <span class="channel-name">بکوژی بەکرێ گیراو</span>
+            </div>
+
+            <div class="channel-card" data-category="movies" data-name="فلیمی تەکسی (کوردی)" data-link="TAXI_ID_HERE">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=200" class="channel-logo" alt="Taxi">
+                </div>
+                <span class="channel-name">فلیمی تەکسی (کوردی)</span>
+            </div>
+
+            <div class="channel-card" data-category="movies" data-name="فلیمی ڕاج کومار (کوردی)" data-link="RAJKUMAR_ID_HERE">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200" class="channel-logo" alt="Raj Kumar">
+                </div>
+                <span class="channel-name">ڕاج کومار (کوردی)</span>
+            </div>
+
+            <div class="channel-card" data-category="movies" data-name="فلیمی یاخی بوون (کوردی)" data-link="REBEL_ID_HERE">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=200" class="channel-logo" alt="Rebel">
+                </div>
+                <span class="channel-name">یاخی بوون (کوردی)</span>
             </div>
 
         </div>
@@ -334,7 +369,7 @@
                 let name = this.getAttribute('data-name');
                 let link = this.getAttribute('data-link');
 
-                if (link) {
+                if (link && !link.includes('_HERE')) {
                     videoBox.innerHTML = `
                         <iframe src="https://www.youtube.com/embed/${link}?autoplay=1" title="${name}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     `;
@@ -343,7 +378,7 @@
                         <div class="video-state-content">
                             <div class="video-placeholder-icon">⚠️</div>
                             <div class="video-message">Stream error. ${name} has no link.</div>
-                            <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
+                            <div class="video-subtext">تکایە لینکێک بۆ ئەم فلیمە دابنە</div>
                         </div>
                     `;
                 }
