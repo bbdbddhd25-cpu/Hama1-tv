@@ -53,7 +53,7 @@
         
         .video-box {
             width: 100%;
-            height: 160px;
+            height: 180px;
             background: #1f2937;
             border-radius: 12px;
             display: flex;
@@ -63,13 +63,18 @@
             position: relative;
             overflow: hidden;
             text-align: center;
-            padding: 15px;
+        }
+        .video-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         .video-state-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 6px;
+            padding: 15px;
         }
         .video-placeholder-icon {
             width: 40px;
@@ -204,11 +209,8 @@
         </div>
 
         <div class="video-box" id="video-box">
-            <div class="video-state-content" id="player-content">
-                <div class="video-placeholder-icon">⚠️</div>
-                <div class="video-message">Stream error. AVA HD has no link.</div>
-                <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
-            </div>
+            <!-- سەرەتای ڤیدیۆی لایگەر بە ڕاستەوخۆیی کارا کراوە -->
+            <iframe src="https://www.youtube.com/embed/ALD3hkFyr3k" title="فیلمی لایگەر" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -222,7 +224,7 @@
     <div class="channels-section">
         <div class="channels-grid" id="channels-grid">
             
-            <div class="channel-card selected" data-category="news" data-name="AVA HD">
+            <div class="channel-card" data-category="news" data-name="AVA HD">
                 <div class="channel-logo-wrap">
                     <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=200" class="channel-logo" alt="AVA">
                 </div>
@@ -285,8 +287,8 @@
                 <span class="channel-name">نێن ئار تی سپۆرت</span>
             </div>
 
-            <!-- بەشی فلیمەکان: فیلمی لایگەر (دۆبلاژکراوی کوردی) -->
-            <div class="channel-card" data-category="movies" data-name="فیلمی لایگەر (دۆبلاژکراوی کوردی)">
+            <!-- فیلمی لایگەر بە لینکەوە -->
+            <div class="channel-card selected" data-category="movies" data-name="فیلمی لایگەر (دۆبلاژکراوی کوردی)" data-type="youtube" data-link="ALD3hkFyr3k">
                 <div class="channel-logo-wrap">
                     <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Liger Movie">
                 </div>
@@ -299,7 +301,7 @@
     <script>
         const tabs = document.querySelectorAll('.tab-btn');
         const channelCards = document.querySelectorAll('.channel-card');
-        const playerContent = document.getElementById('player-content');
+        const videoBox = document.getElementById('video-box');
 
         tabs.forEach(tab => {
             tab.addEventListener('click', function() {
@@ -326,12 +328,21 @@
                 this.classList.add('selected');
 
                 let name = this.getAttribute('data-name');
+                let link = this.getAttribute('data-link');
 
-                playerContent.innerHTML = `
-                    <div class="video-placeholder-icon">⚠️</div>
-                    <div class="video-message">Stream error. ${name} has no link.</div>
-                    <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
-                `;
+                if (link) {
+                    videoBox.innerHTML = `
+                        <iframe src="https://www.youtube.com/embed/${link}?autoplay=1" title="${name}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    `;
+                } else {
+                    videoBox.innerHTML = `
+                        <div class="video-state-content">
+                            <div class="video-placeholder-icon">⚠️</div>
+                            <div class="video-message">Stream error. ${name} has no link.</div>
+                            <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
+                        </div>
+                    `;
+                }
             });
         });
     </script>
