@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiveFootballPro - پەخشی ڕاستەوخۆ و کەناڵەکان</title>
+    <title>HAMA TV PRO</title>
     <style>
         * {
             box-sizing: border-box;
@@ -34,26 +34,39 @@
         header p {
             color: #94a3b8;
             font-size: 14px;
+            line-height: 1.6;
+        }
+        .section-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .section-title {
-            font-size: 18px;
-            margin: 25px 0 15px 0;
+            font-size: 17px;
+            margin-bottom: 15px;
             color: #38bdf8;
             border-right: 5px solid #38bdf8;
             padding-right: 10px;
             font-weight: bold;
         }
-        /* سیستمی گرید بۆ بەشەکان */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 15px;
-            margin-bottom: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
         }
         .card {
-            background-color: #1e293b;
+            background-color: #0f172a;
             border: 1px solid #334155;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             text-align: center;
             text-decoration: none;
@@ -61,17 +74,17 @@
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: #38bdf8;
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 8px 15px rgba(56, 189, 248, 0.2);
         }
         .card-img-box {
             width: 100%;
-            height: 90px;
-            background: #0f172a;
+            height: 75px;
+            background: #1e293b;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,15 +97,18 @@
             object-fit: cover;
         }
         .card-content {
-            padding: 10px;
+            padding: 6px;
         }
         .card h3 {
-            font-size: 13px;
-            margin-bottom: 4px;
+            font-size: 11px;
+            margin-bottom: 2px;
             color: #f8fafc;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .card p {
-            font-size: 10px;
+            font-size: 9px;
             color: #38bdf8;
             font-weight: bold;
         }
@@ -100,7 +116,7 @@
             text-align: center;
             color: #64748b;
             font-size: 12px;
-            margin-top: 40px;
+            margin-top: 30px;
             border-top: 1px solid #1e293b;
             padding-top: 20px;
         }
@@ -109,138 +125,143 @@
 <body>
 
     <header>
-        <h1>LiveFootballPro</h1>
-        <p>پەخشی ڕاستەوخۆی کەناڵە کوردییەکان، تۆپی پێ و فیلمەکان</p>
+        <h1>HAMA TV PRO</h1>
+        <p>بەخێربێن بۆ لێنیکی وێبسایتی hamatv بۆ سەیرکردنی چاناڵەکانی کوردی و فلیم و وەرزشی</p>
     </header>
 
     <!-- بەشی یەکەم: کەناڵە کوردییەکان -->
-    <div class="section-title">📺 کەناڵە کوردییەکان</div>
-    <div class="grid-container">
-        
-        <a href="https://www.youtube.com/@NRT1" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" alt="NRT">
-            </div>
-            <div class="card-content">
-                <h3>NRT</h3>
-                <p>سەیرکردن</p>
-            </div>
-        </a>
+    <div class="section-box">
+        <div class="section-title">📺 کەناڵە کوردییەکان</div>
+        <div class="grid-container">
+            
+            <a href="https://www.youtube.com/@NRT1" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" alt="NRT">
+                </div>
+                <div class="card-content">
+                    <h3>NRT</h3>
+                    <p>سەیرکردن</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@NRTTV" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" alt="NRT 1">
-            </div>
-            <div class="card-content">
-                <h3>NRT 1</h3>
-                <p>سەیرکردن</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@NRTTV" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" alt="NRT 1">
+                </div>
+                <div class="card-content">
+                    <h3>NRT 1</h3>
+                    <p>سەیرکردن</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@nrt2" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" alt="NRT 2">
-            </div>
-            <div class="card-content">
-                <h3>NRT 2</h3>
-                <p>سەیرکردن</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@nrt2" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" alt="NRT 2">
+                </div>
+                <div class="card-content">
+                    <h3>NRT 2</h3>
+                    <p>سەیرکردن</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@NRTSportOfficial" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300" alt="NRT Sport">
-            </div>
-            <div class="card-content">
-                <h3>NRT Sport</h3>
-                <p>وەرزشی</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@NRTSportOfficial" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300" alt="NRT Sport">
+                </div>
+                <div class="card-content">
+                    <h3>NRT Sport</h3>
+                    <p>وەرزشی</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@RudawArabic" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=300" alt="Rudaw">
-            </div>
-            <div class="card-content">
-                <h3>Rudaw</h3>
-                <p>ڕووداو</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@RudawArabic" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=300" alt="Rudaw">
+                </div>
+                <div class="card-content">
+                    <h3>Rudaw</h3>
+                    <p>ڕووداو</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@KurdsatOfficial" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=300" alt="Kurdsat">
-            </div>
-            <div class="card-content">
-                <h3>Kurdsat</h3>
-                <p>کوردسات</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@KurdsatOfficial" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=300" alt="Kurdsat">
+                </div>
+                <div class="card-content">
+                    <h3>Kurdsat</h3>
+                    <p>کوردسات</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@KurdmaxTV" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300" alt="Kurdmax">
-            </div>
-            <div class="card-content">
-                <h3>Kurdmax</h3>
-                <p>کوردماکس</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@KurdmaxTV" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300" alt="Kurdmax">
+                </div>
+                <div class="card-content">
+                    <h3>Kurdmax</h3>
+                    <p>کوردماکس</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@KurdmaxShow" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=300" alt="Kurdmax Show">
-            </div>
-            <div class="card-content">
-                <h3>Kurdmax Show</h3>
-                <p>شۆو</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@KurdmaxShow" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=300" alt="Kurdmax Show">
+                </div>
+                <div class="card-content">
+                    <h3>Kurdmax Show</h3>
+                    <p>شۆو</p>
+                </div>
+            </a>
 
-        <a href="https://www.youtube.com/@AVATVChannel" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=300" alt="AVA">
-            </div>
-            <div class="card-content">
-                <h3>AVA</h3>
-                <p>ئاڤا تیڤی</p>
-            </div>
-        </a>
+            <a href="https://www.youtube.com/@AVATVChannel" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=300" alt="AVA">
+                </div>
+                <div class="card-content">
+                    <h3>AVA</h3>
+                    <p>ئاڤا تیڤی</p>
+                </div>
+            </a>
 
+        </div>
     </div>
 
     <!-- بەشی دووەم: تۆپی پێی ڕاستەوخۆ -->
-    <div class="section-title">⚽ تۆپی پێی ڕاستەوخۆ</div>
-    <div class="grid-container">
-        <a href="https://www.youtube.com/live/CJt0iqo8pBQ?si=Sl7JQEIRmU8FKch9" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300" alt="Live Match">
-            </div>
-            <div class="card-content">
-                <h3>لایڤی یارییەکان</h3>
-                <p>سەیرکردنی لایڤ</p>
-            </div>
-        </a>
+    <div class="section-box">
+        <div class="section-title">⚽ تۆپی پێی ڕاستەوخۆ</div>
+        <div class="grid-container">
+            <a href="https://www.youtube.com/live/CJt0iqo8pBQ?si=Sl7JQEIRmU8FKch9" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300" alt="Live Match">
+                </div>
+                <div class="card-content">
+                    <h3>لایڤی یارییەکان</h3>
+                    <p>سەیرکردن</p>
+                </div>
+            </a>
+        </div>
     </div>
 
     <!-- بەشی سێیەم: فیلم -->
-    <div class="section-title">🎬 بەشی فیلمەکان</div>
-    <div class="grid-container">
-        <a href="https://www.youtube.com" target="_blank" class="card">
-            <div class="card-img-box">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300" alt="Movies">
-            </div>
-            <div class="card-content">
-                <h3>فیلمە نوێیەکان</h3>
-                <p>بینین</p>
-            </div>
-        </a>
+    <div class="section-box">
+        <div class="section-title">🎬 بەشی فیلمەکان</div>
+        <div class="grid-container">
+            <a href="https://www.youtube.com" target="_blank" class="card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300" alt="Movies">
+                </div>
+                <div class="card-content">
+                    <h3>فیلمە نوێیەکان</h3>
+                    <p>بینین</p>
+                </div>
+            </a>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 - LiveFootballPro. هەموو مافەکان پارێزراون.</p>
+        <p>&copy; 2026 - HAMA TV PRO. هەموو مافەکان پارێزراون.</p>
     </footer>
 
 </body>
 </html>
-
