@@ -91,7 +91,7 @@
             color: #9ca3af;
         }
 
-        /* بەشی تابس (Categories Tabs) وەک وێنەکە */
+        /* بەشی تابەکانی سەرەوە بە تەسەسول */
         .categories-container {
             display: flex;
             gap: 8px;
@@ -201,52 +201,50 @@
         </div>
     </div>
 
-    <!-- دوگمەکانی سەرەوە (Tabs) وەک وێنەکە -->
+    <!-- دوگمەکان بەو تەسەسولەی داوات کرد: گشت، کەناڵە ناوخۆییەکان، وەرزشی، فلیم -->
     <div class="categories-container">
         <button class="tab-btn active" data-category="all">گشت</button>
-        <button class="tab-btn" data-category="news">هەواڵەکان</button>
-        <button class="tab-btn" data-category="sport">وەرزش</button>
-        <button class="tab-btn" data-category="movies">فلیمه‌کان</button>
+        <button class="tab-btn" data-category="local">کەناڵە ناوخۆییەکان</button>
+        <button class="tab-btn" data-category="sport">وەرزشی</button>
+        <button class="tab-btn" data-category="movies">فلیم</button>
     </div>
 
     <div class="channels-section">
         <div class="channels-list" id="channels-list">
             
-            <div class="channel-item selected" data-category="news" data-name="AVA HD">
+            <!-- کەناڵە ناوخۆییەکان -->
+            <div class="channel-item selected" data-category="local" data-name="AVA HD">
                 <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
             </div>
-
-            <div class="channel-item" data-category="news" data-name="Rudaw HD">
+            <div class="channel-item" data-category="local" data-name="Rudaw HD">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
             </div>
-
-            <div class="channel-item" data-category="news" data-name="Channel 8">
+            <div class="channel-item" data-category="local" data-name="Channel 8">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
             </div>
-
-            <div class="channel-item" data-category="news" data-name="Kurdistan TV">
+            <div class="channel-item" data-category="local" data-name="Kurdistan TV">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Kurdistan TV">
                 <span class="channel-name">Kurdistan TV</span>
             </div>
-
-            <div class="channel-item" data-category="news" data-name="Kurdsat HD">
+            <div class="channel-item" data-category="local" data-name="Kurdsat HD">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="Kurdsat">
                 <span class="channel-name">Kurdsat HD</span>
             </div>
 
+            <!-- وەرزشی -->
             <div class="channel-item" data-category="sport" data-name="NRT Sports">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="NRT Sports">
                 <span class="channel-name">NRT Sports</span>
             </div>
 
+            <!-- فلیم -->
             <div class="channel-item" data-category="movies" data-name="KurdMax Sorani HD">
                 <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=100" class="channel-logo" alt="KurdMax">
                 <span class="channel-name">KurdMax Sorani HD</span>
             </div>
-
             <div class="channel-item" data-category="movies" data-name="NRT HD">
                 <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="NRT">
                 <span class="channel-name">NRT HD</span>
@@ -260,7 +258,6 @@
         const channelItems = document.querySelectorAll('.channel-item');
         const playerContent = document.getElementById('player-content');
 
-        // فیلتەركردنی کەناڵەکان بە پێی دوگمەکانی سەرەوە
         tabs.forEach(tab => {
             tab.addEventListener('click', function() {
                 tabs.forEach(t => t.classList.remove('active'));
@@ -278,7 +275,6 @@
             });
         });
 
-        // کلیک کردن لەسەر کەناڵەکان و پیشاندانی پەیامی هەڵە لە پلەیەردا بەبێ لینک
         channelItems.forEach(item => {
             item.addEventListener('click', function(e) {
                 e.preventDefault();
