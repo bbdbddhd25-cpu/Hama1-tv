@@ -120,7 +120,6 @@
             padding: 10px 12px;
             background: #111827;
             border-radius: 12px;
-            text-decoration: none;
             color: #fff;
             transition: all 0.2s ease;
             border: 1px solid transparent;
@@ -180,42 +179,42 @@
         <div class="channels-title">ALL CHANNELS</div>
         <div class="channels-list">
             
-            <div class="channel-item active" data-link="" data-name="AVA HD">
+            <div class="channel-item active" data-name="AVA HD">
                 <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
             </div>
 
-            <div class="channel-item" data-link="" data-name="Rudaw HD">
+            <div class="channel-item" data-name="Rudaw HD">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
             </div>
 
-            <div class="channel-item" data-link="" data-name="Channel 8">
+            <div class="channel-item" data-name="Channel 8">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
             </div>
 
-            <div class="channel-item" data-link="" data-name="Kurdistan TV">
+            <div class="channel-item" data-name="Kurdistan TV">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Kurdistan TV">
                 <span class="channel-name">Kurdistan TV</span>
             </div>
 
-            <div class="channel-item" data-link="" data-name="Kurdsat HD">
+            <div class="channel-item" data-name="Kurdsat HD">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="Kurdsat">
                 <span class="channel-name">Kurdsat HD</span>
             </div>
 
-            <div class="channel-item" data-link="" data-name="KurdMax Sorani HD">
+            <div class="channel-item" data-name="KurdMax Sorani HD">
                 <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=100" class="channel-logo" alt="KurdMax">
                 <span class="channel-name">KurdMax Sorani HD</span>
             </div>
 
-            <div class="channel-item" data-link="" data-name="NRT HD">
+            <div class="channel-item" data-name="NRT HD">
                 <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="NRT">
                 <span class="channel-name">NRT HD</span>
             </div>
 
-            <div class="channel-item" data-link="" data-name="NRT Sports">
+            <div class="channel-item" data-name="NRT Sports">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="NRT Sports">
                 <span class="channel-name">NRT Sports</span>
             </div>
@@ -228,33 +227,24 @@
         const playerContent = document.getElementById('player-content');
 
         items.forEach(item => {
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
                 items.forEach(i => i.classList.remove('active'));
                 this.classList.add('active');
 
-                let link = this.getAttribute('data-link');
                 let name = this.getAttribute('data-name');
 
-                // کۆنتڕۆڵی توند: هەر کەناڵێک لینکەکەی بەتاڵ بێت، تەنها پەیامی هەڵە پیشان دەدات و خاڵی کۆتاییە
-                if (!link || link.trim() === '' || link === '#') {
-                    playerContent.innerHTML = `
-                        <div class="video-placeholder-icon">⚠️</div>
-                        <div class="video-message">Stream error. ${name} has no link.</div>
-                        <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
-                    `;
-                    return; // ڕێگری دەکات لەوەی هیچ کارێکی تر بکرێت
-                }
-
-                // ئەم بەشە تەنها ئەوکاتە کار دەکات کە لە داهاتوودا خۆت لینکی ڕاستەقینەی بۆ دابنێیت
+                // لێرەدا هیچ لینکی بوونی نییە، بۆیە تەنها پەیامی هەڵە دەردەبڕێت و تەواو
                 playerContent.innerHTML = `
-                    <div class="video-placeholder-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📺</div>
-                    <div class="video-message" style="color: #38bdf8;">${name} - لایڤەکە دەستی پێکرد</div>
-                    <div class="video-subtext">لینکی لایڤ بە سەرکەوتوویی کرایەوە</div>
+                    <div class="video-placeholder-icon">⚠️</div>
+                    <div class="video-message">Stream error. ${name} has no link.</div>
+                    <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
                 `;
-                window.open(link, '_blank');
             });
         });
     </script>
 
 </body>
 </html>
+
