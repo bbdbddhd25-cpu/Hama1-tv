@@ -211,8 +211,8 @@
         <div class="video-box" id="video-box">
             <div class="video-state-content" id="player-content">
                 <div class="video-placeholder-icon">📺</div>
-                <div class="video-message" style="color: #9ca3af;">فیلمێک یان کەناڵێک هەڵبژێرە</div>
-                <div class="video-subtext">Select a movie or channel to watch</div>
+                <div class="video-message" style="color: #9ca3af;">کەناڵێک یان فیلمێک هەڵبژێرە</div>
+                <div class="video-subtext">Select a channel or movie to watch</div>
             </div>
         </div>
     </div>
@@ -227,12 +227,60 @@
     <div class="channels-section">
         <div class="channels-grid" id="channels-grid">
             
-            <!-- کەناڵەکانی هەواڵ و وەرزش -->
+            <div class="channel-card" data-category="news" data-name="AVA HD">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=200" class="channel-logo" alt="AVA">
+                </div>
+                <span class="channel-name">ئافا ئەیج دی</span>
+            </div>
+
             <div class="channel-card" data-category="news" data-name="Rudaw HD">
                 <div class="channel-logo-wrap">
                     <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200" class="channel-logo" alt="Rudaw">
                 </div>
                 <span class="channel-name">ڕووداو HD</span>
+            </div>
+
+            <div class="channel-card" data-category="news" data-name="Channel 8">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=200" class="channel-logo" alt="Channel 8">
+                </div>
+                <span class="channel-name">کەناڵی ٨</span>
+            </div>
+
+            <div class="channel-card" data-category="news" data-name="NRT HD">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=200" class="channel-logo" alt="NRT">
+                </div>
+                <span class="channel-name">نێن ئار تی ئەیج دی</span>
+            </div>
+
+            <div class="channel-card" data-category="news" data-name="NRT News">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=200" class="channel-logo" alt="NRT News">
+                </div>
+                <span class="channel-name">نێن ئار تی نیووز</span>
+            </div>
+
+            <div class="channel-card" data-category="news" data-name="KurdMax Sorani HD">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=200" class="channel-logo" alt="KurdMax">
+                </div>
+                <span class="channel-name">کوردماکس سورانی HD</span>
+            </div>
+
+            <div class="channel-card" data-category="news" data-name="Kurdistan TV">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=200" class="channel-logo" alt="Kurdistan TV">
+                </div>
+                <span class="channel-name">کوردستان تیڤی</span>
+            </div>
+
+            <div class="channel-card" data-category="news" data-name="Kurdsat HD">
+                <div class="channel-logo-wrap">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=200" class="channel-logo" alt="Kurdsat">
+                </div>
+                <span class="channel-name">کوردسات ئەیج دی</span>
             </div>
 
             <div class="channel-card" data-category="sport" data-name="NRT Sports">
@@ -242,47 +290,47 @@
                 <span class="channel-name">نێن ئار تی سپۆرت</span>
             </div>
 
-            <!-- ٦ فیلمە دیاریکراوەکەی بەشی فلیمه‌کان -->
-            <div class="channel-card" data-category="movies" data-name="فیلمی یەکەم">
+            <!-- بەشی فلیمەکان (شەش فیلمە کوردییەکە بە لینکە ڕاستەقینەکانیانەوە) -->
+            <div class="channel-card" data-category="movies" data-name="فیلمی لایگەر (کوردی)" data-link="g_14wlLH-7Q">
                 <div class="channel-logo-wrap">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Movie 1">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Liger">
                 </div>
-                <span class="channel-name">فیلمی یەکەم</span>
+                <span class="channel-name">فیلمی لایگەر (کوردی)</span>
             </div>
 
-            <div class="channel-card" data-category="movies" data-name="فیلمی دووەم">
+            <div class="channel-card" data-category="movies" data-name="فلیمی سێ گەمژەکە (کوردی)" data-link="c68I_joHJCM">
                 <div class="channel-logo-wrap">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Movie 2">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=200" class="channel-logo" alt="3 Idiots">
                 </div>
-                <span class="channel-name">فیلمی دووەم</span>
+                <span class="channel-name">سێ گەمژەکە (کوردی)</span>
             </div>
 
-            <div class="channel-card" data-category="movies" data-name="فیلمی سێیەم">
+            <div class="channel-card" data-category="movies" data-name="فلیمی بکوژی بەکرێ گیراو (کوردی)" data-link="na1B6OX_fH4">
                 <div class="channel-logo-wrap">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Movie 3">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=200" class="channel-logo" alt="Assassin">
                 </div>
-                <span class="channel-name">فیلمی سێیەم</span>
+                <span class="channel-name">بکوژی بەکرێ گیراو</span>
             </div>
 
-            <div class="channel-card" data-category="movies" data-name="فیلمی چوارەم">
+            <div class="channel-card" data-category="movies" data-name="فلیمی تەکسی (کوردی)" data-link="cj2Hs260SpU">
                 <div class="channel-logo-wrap">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Movie 4">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=200" class="channel-logo" alt="Taxi">
                 </div>
-                <span class="channel-name">فیلمی چوارەم</span>
+                <span class="channel-name">فلیمی تەکسی (کوردی)</span>
             </div>
 
-            <div class="channel-card" data-category="movies" data-name="فیلمی پێنجەم">
+            <div class="channel-card" data-category="movies" data-name="فلیمی ڕاج کومار (کوردی)" data-link="Oh_XMYPEH0w">
                 <div class="channel-logo-wrap">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Movie 5">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200" class="channel-logo" alt="Raj Kumar">
                 </div>
-                <span class="channel-name">فیلمی پێنجەم</span>
+                <span class="channel-name">ڕاج کومار (کوردی)</span>
             </div>
 
-            <div class="channel-card" data-category="movies" data-name="فیلمی شەشەم">
+            <div class="channel-card" data-category="movies" data-name="فلیمی یاخی بوون (کوردی)" data-link="6BmkX05MHvY">
                 <div class="channel-logo-wrap">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200" class="channel-logo" alt="Movie 6">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=200" class="channel-logo" alt="Rebel">
                 </div>
-                <span class="channel-name">فیلمی شەشەم</span>
+                <span class="channel-name">یاخی بوون (کوردی)</span>
             </div>
 
         </div>
@@ -328,8 +376,8 @@
                     videoBox.innerHTML = `
                         <div class="video-state-content">
                             <div class="video-placeholder-icon">⚠️</div>
-                            <div class="video-message">هیچ لینکێک بۆ (${name}) نەدۆزرایەوە.</div>
-                            <div class="video-subtext">تکایە چاوەڕێی لینکەکان بە</div>
+                            <div class="video-message">Stream error. ${name} has no link.</div>
+                            <div class="video-subtext">تکایە لینکێک بۆ ئەم فلیمە دابنە</div>
                         </div>
                     `;
                 }
