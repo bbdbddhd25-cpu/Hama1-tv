@@ -187,12 +187,12 @@
             </div>
 
             <!-- Rudaw HD (خاوەن لینک) -->
-            <div class="channel-item active" data-link="" data-name="Rudaw HD">
+            <div class="channel-item" data-link="https://www.youtube.com/@RudawArabic/live" data-name="Rudaw HD">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
             </div>
 
-            <!-- Channel 8 (بێ لینک - ئێستا ئەمیش بە هەمان شێوە پەیامی هەڵە دەردەكات ئەگەر لینکی نەبێت) -->
+            <!-- Channel 8 (بێ لینک - دڵنیا بەوە کە ئەمیش بە هیچ شێوەیەک ناکرێتەوە) -->
             <div class="channel-item" data-link="" data-name="Channel 8">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
@@ -243,7 +243,7 @@
                 let link = this.getAttribute('data-link');
                 let name = this.getAttribute('data-name');
 
-                // پشکنینی گشتی بۆ هەموو کەناڵێک: ئەگەر لینکەکە بەتاڵ بوو یان بوونی نەبوو
+                // پشکنینی توند و یەکجاری: ئەگەر لینکەکە بەتاڵ بوو، بۆش بوو، یان تەنها هاشتاگ بوو
                 if (!link || link.trim() === '' || link === '#') {
                     playerContent.innerHTML = `
                         <div class="video-placeholder-icon">⚠️</div>
@@ -251,7 +251,7 @@
                         <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
                     `;
                 } else {
-                    // تەنها بۆ ئەو کەناڵانەی لینکی ڕاستەقینەیان هەیە لایڤەکە دەکرێتەوە
+                    // تەنها و تەنها بۆ ئەو کەناڵانەی لینکی ڕاستەقینەیان تێدابێت لایڤەکە دەکرێتەوە
                     playerContent.innerHTML = `
                         <div class="video-placeholder-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📺</div>
                         <div class="video-message" style="color: #38bdf8;">${name} - لایڤەکە دەستی پێکرد</div>
