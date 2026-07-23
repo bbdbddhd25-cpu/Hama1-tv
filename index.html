@@ -91,6 +91,39 @@
             color: #9ca3af;
         }
 
+        /* بەشی تابس (Categories Tabs) وەک وێنەکە */
+        .categories-container {
+            display: flex;
+            gap: 8px;
+            padding: 12px 15px;
+            overflow-x: auto;
+            background: #0b0f19;
+            white-space: nowrap;
+        }
+        .categories-container::-webkit-scrollbar {
+            display: none;
+        }
+        .tab-btn {
+            background: #111827;
+            border: 1px solid #1f2937;
+            color: #9ca3af;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn:hover {
+            background: #1f2937;
+            color: #fff;
+        }
+        .tab-btn.active {
+            background: #8b5cf6;
+            color: #fff;
+            border-color: #a78bfa;
+        }
+
         .channels-section {
             flex: 1;
             display: flex;
@@ -98,17 +131,10 @@
             overflow: hidden;
             background: #0b0f19;
         }
-        .channels-title {
-            padding: 10px 15px 5px 15px;
-            font-size: 11px;
-            color: #8b5cf6;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
         .channels-list {
             flex: 1;
             overflow-y: auto;
-            padding: 0 10px 10px 10px;
+            padding: 0 15px 15px 15px;
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -128,7 +154,7 @@
         .channel-item:hover {
             background: #1f2937;
         }
-        .channel-item.active {
+        .channel-item.selected {
             background: #8b5cf6;
             border-color: #a78bfa;
         }
@@ -175,46 +201,53 @@
         </div>
     </div>
 
+    <!-- دوگمەکانی سەرەوە (Tabs) وەک وێنەکە -->
+    <div class="categories-container">
+        <button class="tab-btn active" data-category="all">گشت</button>
+        <button class="tab-btn" data-category="news">هەواڵەکان</button>
+        <button class="tab-btn" data-category="sport">وەرزش</button>
+        <button class="tab-btn" data-category="movies">فلیمه‌کان</button>
+    </div>
+
     <div class="channels-section">
-        <div class="channels-list">
+        <div class="channels-list" id="channels-list">
             
-            <!-- بەشی یەکەم: کەناڵە ناوخۆییەکان -->
-            <div class="channels-title">کەناڵە ناوخۆییەکان</div>
-            <div class="channel-item active" data-name="AVA HD">
+            <div class="channel-item selected" data-category="news" data-name="AVA HD">
                 <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
             </div>
-            <div class="channel-item" data-name="Rudaw HD">
+
+            <div class="channel-item" data-category="news" data-name="Rudaw HD">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100" class="channel-logo" alt="Rudaw">
                 <span class="channel-name">Rudaw HD</span>
             </div>
-            <div class="channel-item" data-name="Channel 8">
+
+            <div class="channel-item" data-category="news" data-name="Channel 8">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Channel 8">
                 <span class="channel-name">Channel 8</span>
             </div>
-            <div class="channel-item" data-name="Kurdistan TV">
+
+            <div class="channel-item" data-category="news" data-name="Kurdistan TV">
                 <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=100" class="channel-logo" alt="Kurdistan TV">
                 <span class="channel-name">Kurdistan TV</span>
             </div>
-            <div class="channel-item" data-name="Kurdsat HD">
+
+            <div class="channel-item" data-category="news" data-name="Kurdsat HD">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="Kurdsat">
                 <span class="channel-name">Kurdsat HD</span>
             </div>
 
-            <!-- بەشی دووەم: وەرزشی -->
-            <div class="channels-title">وەرزشی</div>
-            <div class="channel-item" data-name="NRT Sports">
+            <div class="channel-item" data-category="sport" data-name="NRT Sports">
                 <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100" class="channel-logo" alt="NRT Sports">
                 <span class="channel-name">NRT Sports</span>
             </div>
 
-            <!-- بەشی سێیەم: فلیم -->
-            <div class="channels-title">فلیم</div>
-            <div class="channel-item" data-name="KurdMax Sorani HD">
+            <div class="channel-item" data-category="movies" data-name="KurdMax Sorani HD">
                 <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=100" class="channel-logo" alt="KurdMax">
                 <span class="channel-name">KurdMax Sorani HD</span>
             </div>
-            <div class="channel-item" data-name="NRT HD">
+
+            <div class="channel-item" data-category="movies" data-name="NRT HD">
                 <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=100" class="channel-logo" alt="NRT">
                 <span class="channel-name">NRT HD</span>
             </div>
@@ -223,15 +256,35 @@
     </div>
 
     <script>
-        const items = document.querySelectorAll('.channel-item');
+        const tabs = document.querySelectorAll('.tab-btn');
+        const channelItems = document.querySelectorAll('.channel-item');
         const playerContent = document.getElementById('player-content');
 
-        items.forEach(item => {
+        // فیلتەركردنی کەناڵەکان بە پێی دوگمەکانی سەرەوە
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                let selectedCategory = this.getAttribute('data-category');
+
+                channelItems.forEach(item => {
+                    if (selectedCategory === 'all' || item.getAttribute('data-category') === selectedCategory) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // کلیک کردن لەسەر کەناڵەکان و پیشاندانی پەیامی هەڵە لە پلەیەردا بەبێ لینک
+        channelItems.forEach(item => {
             item.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                items.forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
+                channelItems.forEach(i => i.classList.remove('selected'));
+                this.classList.add('selected');
 
                 let name = this.getAttribute('data-name');
 
