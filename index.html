@@ -180,7 +180,6 @@
         <div class="channels-title">ALL CHANNELS</div>
         <div class="channels-list">
             
-            <!-- هەموو کەناڵەکان بە بێ لینک (data-link="") تێکڕا پەیامی هەڵە دەدەن -->
             <div class="channel-item active" data-link="" data-name="AVA HD">
                 <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100" class="channel-logo" alt="AVA">
                 <span class="channel-name">AVA HD</span>
@@ -236,21 +235,23 @@
                 let link = this.getAttribute('data-link');
                 let name = this.getAttribute('data-name');
 
-                // بەهۆی بەتاڵ بوونی لینکەکەوە، تەنها پەیامی هەڵەی Stream Error پیشان دەدات
+                // کۆنتڕۆڵی توند: هەر کەناڵێک لینکەکەی بەتاڵ بێت، تەنها پەیامی هەڵە پیشان دەدات و خاڵی کۆتاییە
                 if (!link || link.trim() === '' || link === '#') {
                     playerContent.innerHTML = `
                         <div class="video-placeholder-icon">⚠️</div>
                         <div class="video-message">Stream error. ${name} has no link.</div>
                         <div class="video-subtext">تکایە لینکێک بۆ ئەم کەناڵە دابنە</div>
                     `;
-                } else {
-                    playerContent.innerHTML = `
-                        <div class="video-placeholder-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📺</div>
-                        <div class="video-message" style="color: #38bdf8;">${name} - لایڤەکە دەستی پێکرد</div>
-                        <div class="video-subtext">لینکی لایڤ بە سەرکەوتوویی کرایەوە</div>
-                    `;
-                    window.open(link, '_blank');
+                    return; // ڕێگری دەکات لەوەی هیچ کارێکی تر بکرێت
                 }
+
+                // ئەم بەشە تەنها ئەوکاتە کار دەکات کە لە داهاتوودا خۆت لینکی ڕاستەقینەی بۆ دابنێیت
+                playerContent.innerHTML = `
+                    <div class="video-placeholder-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📺</div>
+                    <div class="video-message" style="color: #38bdf8;">${name} - لایڤەکە دەستی پێکرد</div>
+                    <div class="video-subtext">لینکی لایڤ بە سەرکەوتوویی کرایەوە</div>
+                `;
+                window.open(link, '_blank');
             });
         });
     </script>
